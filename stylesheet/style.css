@@ -20,179 +20,139 @@
 }
 /*----------------------------------------------------------------------*/
 
-
+/*BODY STYLE------------------------------------------------------------------*/
 body {
-		margin: 0px;
-		padding-top: 40px;	
-
+    margin: 0px;
+    background-color: #45ACD5;
 }
+/*----------------------------------------------------------------------*/
 
-
+/*NAVIGATION STYLE------------------------------------------------------------------*/
 .navigation {
-		background-color: #4CB5F5;
-		overflow: hidden;
-		width: 100%;
-		position:fixed;
-		top:0px;
-		 transition: top 0.2s ease-in-out;
-
+    background-color: #45ACD5;	
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    transition: top 0.3s ease-in-out;
 }
 
 .navigation a {
-		float:left;
-		padding: 14px 16px;
-		text-align: center;
-		outline: none;
-		display:none;
+    float:left;
+    padding: 14px 16px;
+    text-align: center;
+    outline: none; 
+    display: none;
 }
 	
-.nav-up {
+.navUp {
     top: -52px;
 }
 
-
-.menu_leftside {
-		float:left;	
-}
-
-.menu_leftside ul{
-	list-style-type:none;
+.menuLeftSide ul{
+	list-style-type: none;
 	margin: 0;
     padding: 0;
-    overflow: hidden;
+    float: left;	
 }
 
- .active  {
-		color:#003B46;	
-
+.active  {
+    color:#003B46;	
 }
 
 
-.menu_leftside li {	
+.menuLeftSide li {	
 	float:left;
-	
-	
-}
-.menu_leftside li a {
-		display:inline;
-		color:white;
-		text-align:center;
-		font-size:20px;
-		outline:none;	
-		font-family: Eight_bit_four;
-		text-decoration:none;
-		text-align:center;
 }
 
-
-
-.menu_leftside a:hover {
-		color:#003B46;	
-		 transition-delay:.2s;
-	
+.menuLeftSide li a {
+    display: inline;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;	
+    font-family: Eight_bit_four;
 }
 
-.menu_rightside {
-		float:right;
+.menuLeftSide a:hover {
+    color: #003B46;	
+    transition-delay: .2s;	
 }
 
-.menu_rightside ul{
-	
-	list-style-type:none;
-	text-decoration:none;
+.menuRightSide {
+    float: right;
+}
+
+.menuRightSide ul{
+	list-style-type: none;
+	text-decoration: none;
 	margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
-.menu_rightside li {
-	
-	float:left;
-	
+.menuRightSide li {	
+	float: left;
 }
 
-.menu_rightside a {
-		display:block;
-		color:white;
-		text-align:center;
-		font-size:20px;
-		text-decoration:none;
-		outline:none;
-		
-		
-}
+.menuRightSide a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+ }
 
-.menu_rightside a:hover {
-		color:#003B46;	
+.menuRightSide a:hover {
+    color: #003B46;	
 }
+/*----------------------------------------------------------------------*/
 
+/*NAVIGATION RESPONSIVE STYLE------------------------------------------------------------------*/
 @media screen and (max-width:600px){
-	.menu_leftside {position: absolute;}
-	.menu_leftside ul {display:none;}
-	.menu_rightside a {padding: 14px 12px;}
+
+    .menuLeftSide {
+	     position: absolute;
+	     margin-left: 40px;
+		 margin-top: 10px;
+	}
+
+    .menuLeftSide ul {
+         display: none;
+    }
+
+    .menuRightSide a {
+	     padding: 14px 12px;
+	}
 
 	
-	.navigation a {
-		float:left;
-		display:block;
-		color: white;	
+    .navigation a {
+	     float: left;
+	     display: block;
+	     color: white;	
 	}
-		
+
+
+    .menu_icon {
+	     padding: 14px 12px; 
+	     display: block;
+	}
+	
+    .menuIcon:hover {
+	     color:#003B46;
+	}
+
+    #btnMenu.rotated{
+         transform: rotate(90deg);
+	}		
+
+    .menuLeftSide.responsive ul{
+	     position: absolute;
+	     background-color: #4CB5F5;	
+	     margin-top: 40px;
+	     z-index: 1;
+	}	
 }
 
-
-
-@media screen and (max-width:600px){
-	.menu_leftside{
-		
-		margin-left:40px;
-		margin-top:10px;
-		
-	}
-	.menu_leftside.responsive ul{
-			position: absolute;
-			z-index: 1;		
-			margin-top: 40px;
-			position: absolute; 
-			display:none;	 
-			background-color:#4CB5F5;
-	}
-	
-		.menu_leftside.responsive ul li{
-			text-align:center;
-	}
-	
-	
-	
-	
-	
-	.menu_icon {padding:14px 12px; display:block;}
-	
-	.menu_icon:hover {
-
-		color:#003B46;
-
-	}
-
-	#btnClick.rotated{
-    transform: rotate(90deg);
-	}
-
-	.menu_leftside {
-		 
-		display: block;
-		padding:0px;
-		
-		
-	}
-	
-	.navigation a {
-		position: relative;
-		right: 0;
-		top: 0;
-	}
-		
-}
+/*----------------------------------------------------------------------*/
 
 
 
@@ -204,10 +164,10 @@ body {
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
-  height:707px;
+   height:707px;
+   margin-top:20px;
 
 }
-
 
 
 
