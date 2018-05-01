@@ -2,8 +2,8 @@
 //When you click the button icon adds a .responsive class to .menuLeftside class
 function activateMenu() {
 	
-		var x = document.getElementById("menuLeftside");
-		if (x.className === "menu_leftside") {
+		var x = document.getElementById("menuLeftSideWrap");
+		if (x.className === "menuLeftSide") {
 			x.className += " responsive";
 		} 		
 		
@@ -14,8 +14,8 @@ function activateMenu() {
 	$(document).ready(function(){	
 	
 		//If button icon is clicked animate the height of the menus
-		 $("#btnClick").click(function(){
-			$("#menuLeftside_ul").animate({
+		 $("#btnMenu").click(function(){
+			$("#menuLeftSideUl").animate({
 				height: 'toggle'
 			},'slow');
 
@@ -40,14 +40,14 @@ $(document).ready(function(){
 			if(viewportWidth > 600){
 				
 			//remove the .responsive class in menuLeftside 	
-				$("#menuLeftside").attr('class', 'menu_leftside');
+				$("#menuLeftSideWrap").attr('class', 'menuLeftSide');
 				
 			//change  the menuLeftside display:none to display:inline
-				$("#menuLeftside_ul").css('display', 'inline');
+				$("#menuLeftSideUl").css('display', 'inline');
 				
 			}else {
 			//else if view port is less than 600 .menuLeftside class display is equal to none
-				$("#menuLeftside_ul").css('display', 'none');
+				$("#menuLeftSideUl").css('display', 'none');
 			
 			}
 
@@ -64,18 +64,18 @@ $(document).ready(function(){
 			if (viewportWidth <= 600){
 
 			//Hide the menu if you click any part of the website
-			$("#menuLeftside_ul").animate({
+			$("#menuLeftSideUl").animate({
 				height: 'hide'
 
 				
 			});
 
-			menuviseStatus = $('#menuLeftside_ul').is(':visible');
+			menuviseStatus = $('#menuLeftSideUl').is(':visible');
 
 			if(menuviseStatus == true){
 
 			//If button icon is clicked the button icon rotate in 90 degrees
-			$('#btnClick').toggleClass('rotated');
+			$('#btnMenu').toggleClass('rotated');
 	
 
 		}
@@ -85,7 +85,7 @@ $(document).ready(function(){
 		});
 		
 		//Prevent any event from happening on inside the parent event handler
-		$('#wrap_navigation').click(function(event){
+		$('#navigationWrap').click(function(event){
 			event.stopPropagation();
 		});
 		
@@ -125,11 +125,11 @@ function hasScrolled() {
     // This is necessary so you never see what is "behind" the navbar.
     if (st > lastScrollTop && st > navbarHeight){
         // Scroll Down
-        $('.navigation').removeClass('nav-down').addClass('nav-up');
+        $('.navigation').removeClass('navDown').addClass('navUp');
     } else {
         // Scroll Up
         if(st + $(window).height() < $(document).height()) {
-            $('.navigation').removeClass('nav-up').addClass('nav-down');
+            $('.navigation').removeClass('navUp').addClass('navDown');
         }
     }
     
