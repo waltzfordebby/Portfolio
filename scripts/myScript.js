@@ -1,4 +1,6 @@
 
+var menuviseStatus; //var for "if the menu list is visible"
+var viewportWidthUnload; // get the windows size on refresh
 //When you click the button icon adds a .responsive class to .menuLeftside class
 function activateMenu() {
 	
@@ -9,7 +11,7 @@ function activateMenu() {
 		
 	}
 	
-	var menuviseStatus;
+
 	
 	$(document).ready(function(){	
 	
@@ -22,7 +24,6 @@ function activateMenu() {
 		//If button icon is clicked the button icon rotate in 90 degrees
 				$(this).toggleClass('rotated');
 				
-		
 
 		});
 	});
@@ -34,13 +35,16 @@ $(document).ready(function(){
 		//Determine if the view port is being resize
 		$(window).resize(function(){
 		
-		var viewportWidth = $(window).width();
+	     viewportWidth = $(window).width();
 		
 		//If viewport width is greater than 600 		
-			if(viewportWidth > 600){
+			if(viewportWidth > 800){
 				
 			//remove the .responsive class in menuLeftside 	
 				$("#menuLeftSideWrap").attr('class', 'menuLeftSide');
+
+				$("#footerLeft").attr('class', 'leftFooter');
+				$("#footerRight").attr('class', 'rightFooter');
 				
 			//change  the menuLeftside display:none to display:inline
 				$("#menuLeftSideUl").css('display', 'inline');
@@ -51,17 +55,33 @@ $(document).ready(function(){
 			
 			}
 
+
+			if (viewportWidth <= 800) {
+				$("#footerLeft").attr('class', 'leftResponsive');
+				$("#footerRight").attr('class', 'rightResponsive');
+			}
+
+
+
 		});		
+
+			viewportWidthUnload = $(window).width(); // get the windows width
+
+			// if windows with is less than or eqaul to 800 on refresh execute the conditions
+			if (viewportWidthUnload <= 800) {
+				$("#footerLeft").attr('class', 'leftResponsive');
+				$("#footerRight").attr('class', 'rightResponsive');
+			}
 		
 		
 		//Determine if you click any part of website
 		$('html').click(function() {
 			
-			var viewportWidth = $(window).width();
+			viewportWidth = $(window).width();
 
 
 			// If view port width is less than or equal to 600 execute the codes below
-			if (viewportWidth <= 600){
+			if (viewportWidth <= 800){
 
 			//Hide the menu if you click any part of the website
 			$("#menuLeftSideUl").animate({
@@ -89,8 +109,7 @@ $(document).ready(function(){
 			event.stopPropagation();
 		});
 		
-		
-		
+	
 		
 });
 	
