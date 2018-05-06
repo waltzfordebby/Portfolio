@@ -8,7 +8,7 @@
    <meta name="description" content="The portfolio of Christian Lester">
    <meta name="keywords" content="Christian Lester, Lester, Cayabyab, Christian Lester Cayabyab, Christian Lester Cayabyab Portfolio">
    <meta name="author" content="Christian Lester Blanco Cayabyab">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <!---->
 	
@@ -25,10 +25,15 @@
    <script src="scripts/jquery-1.9.1.min.js"></script>
    <!---->
 
+
 </head>
 
-<body> 
+<body onload="completeLoad()" > 
 
+<div id="loader" >D</div>
+
+<!--CONTENT CONTAINER-->
+<div  class="animateBody" id="contentContainer">
 
 <!--HEADER-->
 <header>
@@ -46,7 +51,7 @@
     <div class="navigation navDown" id="navigationWrap">
 
         <!--BUTTON SHOWS WHEN THE SCREEN IS SMALLER-->
-        <a href="javascript:void(0)" id="btnMenu" class="menuIcon" onclick="activateMenu();"><i class="fas fa-bars"></i></a>
+        <a href="javascript:void(0)" id="btnMenu" class="menuIcon" onclick="activateMenu();">F</a>
 
         <!--LEFT SIDE MENU CONTAINER-->
         <div class="menuLeftSide" id="menuLeftSideWrap">
@@ -54,7 +59,7 @@
         	<!--LEFT SIDE MENU -->
             <ul id="menuLeftSideUl">
 
-                <li><a href="#"><span class="active">Home</span></a></li>
+                <li><a class="active" href="#"><span >Home</span></a></li>
 			    <li><a href="#"><span>About</span></a></li>
 			    <li><a href="#"><span>Portfolio</span></a></li>
 			    <li><a href="#"><span>Contact</span></a></li>
@@ -76,26 +81,33 @@
 			</ul>
 
 		</div>
+	</div>
 
 </nav>
 <!--NAVIGATION END-->
+
+<main>
+
 	
 	<div class="intro">
-		
+
+		<div class="asset_1">
+
+
+
+		</div>
+
+
+
+
+
+
 	</div>
-	
-	<div class="about">
-	
-	</div>
-	
-	<div class="portfolio">
-	
-	</div>
+
 
 	
 
-
-
+</main>
 
 
 
@@ -121,7 +133,8 @@
 
 </footer>
 
-
+</div>
+<!--CONTENT CONTAINER END-->
 <!--SCRIPTS-->
 <script src="scripts/myScript.js"></script>
 <!--SCRIPTS-->

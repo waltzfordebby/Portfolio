@@ -1,6 +1,20 @@
 
 var menuviseStatus; //var for "if the menu list is visible"
 var viewportWidthUnload; // get the windows size on refresh
+var loadTimeout; // for load timeout
+
+
+// call showPage() function when the page is fully loaded
+function completeLoad() {
+    loadTimeout = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("contentContainer").style.display = "block";
+}
+
+
 //When you click the button icon adds a .responsive class to .menuLeftside class
 function activateMenu() {
 	
@@ -21,8 +35,8 @@ function activateMenu() {
 				height: 'toggle'
 			},'slow');
 
-		//If button icon is clicked the button icon rotate in 90 degrees
-				$(this).toggleClass('rotated');
+		//If button icon is clicked the button icon rotate in 360 degrees
+				$(this).toggleClass('opacity');
 				
 
 		});
@@ -95,7 +109,7 @@ $(document).ready(function(){
 			if(menuviseStatus == true){
 
 			//If button icon is clicked the button icon rotate in 90 degrees
-			$('#btnMenu').toggleClass('rotated');
+			$('#btnMenu').toggleClass('opacity');
 	
 
 		}
@@ -153,4 +167,15 @@ function hasScrolled() {
     }
     
     lastScrollTop = st;
+}
+
+
+
+function completeLoad() {
+    loadTimeout = setTimeout(showPage, 6000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("contentContainer").style.display = "block";
 }
