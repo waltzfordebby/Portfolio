@@ -24,34 +24,121 @@
 		src:url(../fonts/Open_Sans/OpenSans-Regular.ttf);
 }
 
-
 @font-face{
 		font-family: Lato;
 		src:url(../fonts/Lato/Lato-Regular.ttf);
 }
+
+@font-face{
+        font-family: Acadian;
+        src:url(../fonts/acadian_runes/Acadian_Runes-Regular_PERSONAL_USE.ttf);
+}
+
+@font-face{
+        font-family: Mountain;
+        src:url(../fonts/mountain/Mountain.ttf);
+}
+
+@font-face{
+        font-family: Dragon;
+        src:url(../fonts/dragons/Dragons.ttf);
+}
+
+@font-face{
+        font-family: Dragon_2;
+        src:url(../fonts/hff_chinese_dragon/HFF_Chinese_Dragon.ttf);
+}
+
+@font-face{
+        font-family: Greek;
+        src:url(../fonts/greek_mythology/Greek_Mythology.ttf);
+}
+
+
+
+
+
+
+
 /*----------------------------------------------------------------------*/
 
 /*BODY STYLE------------------------------------------------------------------*/
 body {
-    margin: 0px;
-    background-color: #45ACD5;
-	position: relative;
+    
+    position: relative;
+    padding-bottom: 3rem;
     margin: 0;
-    padding-bottom: 6rem;
-    min-height: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+/* Add animation to "body" */
+.animateBody{
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 2s;
+  animation-name: animatebottom;
+  animation-duration: 2s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  margin: -75px 0 0 -75px;
+ -webkit-animation: mymove 5s linear infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 5s linear infinite;
+  font-family: Greek;
+  font-size:100px;
+  -webkit-transform:rotateY(180deg);
+  -moz-transform:rotateY(180deg);
+  -o-transform:rotateY(180deg);
+  -ms-transform:rotateY(180deg);
+ 
+}
+
+@-webkit-keyframes mymove {
+    from {left: 20%;}
+    to {left: 90%;}
+}
+
+@keyframes mymove {
+    from {left: 20%;}
+    to {left: 90%;}
+}
+
+#contentContainer {
+  display: none;
+  text-align: center;
+  height: 100%;
 }
 /*----------------------------------------------------------------------*/
 
 /*HTML STYLE------------------------------------------------------------------*/
 html {
   height: 100%;
+  width:100%;
   box-sizing: border-box;
 }
 /*----------------------------------------------------------------------*/
 
 /*NAVIGATION STYLE------------------------------------------------------------------*/
 .navigation {
-    background-color: #45ACD5;	
+
     width: 100%;
     position: fixed;
     top: 0px;
@@ -64,6 +151,9 @@ html {
     text-align: center;
     outline: none; 
     display: none;
+    text-decoration: none;  
+    font-family: Mountain;
+    color:white;
 }
 	
 .navUp {
@@ -78,7 +168,8 @@ html {
 }
 
 .active  {
-    color:#003B46;	
+    opacity: 0.6;	
+    transition:none;
 }
 
 
@@ -91,12 +182,12 @@ html {
     color: white;
     text-align: center;
     text-decoration: none;	
-    font-family: Open_sans;
+    font-family: Acadian;
 
 }
 
-.menuLeftSide a:hover {
-    color: #003B46;	
+.menuLeftSide a:hover:not(.active) {
+    opacity: 0.6;  
     transition-delay: .2s;	
 }
 
@@ -124,7 +215,8 @@ html {
  }
 
 .menuRightSide a:hover {
-    color: #003B46;	
+     opacity: 0.7; 
+     transition-delay: .2s;  
 }
 /*----------------------------------------------------------------------*/
 
@@ -153,22 +245,29 @@ html {
 	}
 
 
+
     .menu_icon {
 	     padding: 14px 12px; 
 	     display: block;
 	}
 	
     .menuIcon:hover {
-	     color:#003B46;
+	     opacity: 0.7;  
 	}
 
-    #btnMenu.rotated{
-         transform: rotate(90deg);
+     .menuIcon {
+         font-size: 25px; 
+         font-weight:900;
+    }
+
+    #btnMenu.opacity{
+          opacity: 0.7; 
 	}		
+
+
 
     .menuLeftSide.responsive ul{
 	     position: absolute;
-	     background-color: #4CB5F5;	
 	     margin-top: 40px;
 	     z-index: 1;
 	}	
@@ -217,12 +316,12 @@ html {
 .rightFooter {
 
 	width:50%;
-	float:right;
+	float: right;
 }
 
 .rightFooter p {
 
-	float:left;
+	float: left;
 }
 
 .rightFooter a {
@@ -237,8 +336,6 @@ html {
 
 
 .leftResponsive {
-
-	width:50%;
 	float:left;
 }
 
@@ -254,7 +351,6 @@ html {
     padding:14px 16px;
     outline:none;
     color:white;
-    border-bottom:1px solid white;
 }
 
 .leftResponsive a:hover{
@@ -263,7 +359,7 @@ html {
 
 .rightResponsive {
 
-	width:50%;
+
 	float:right;
 }
 
@@ -287,6 +383,7 @@ html {
 .leftResponsive, .rightResponsive {
 	width:100%;
 	text-align:center;
+	border-bottom:1px solid white;
 }
 
 
@@ -295,36 +392,25 @@ html {
 
 /*----------------------------------------------------------------------*/
 
+main {
+	height:100%;
+	width:100%;
+}
 
 .intro {
 
-   background-image: url("../images/intro_bg_3.png");
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   height:707px;
-   margin-top:20px;
+ background-image: url("../images/intro_bg.jpg");
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ height: 100%;
 
 }
 
 
+.asset_1 img {
 
-.about {
-	background-color: #003B46;
-	height:300px;
-	width:100%;
-}
-
-.portfolio {
-	background-color: #E38B75;
-	height:300px;
-	width:100%;
-}
-
-.contact {
-	background-color: #97B8C2;
-	height:300px;
-	width:100%;
+    height:200px;
 }
 
 
